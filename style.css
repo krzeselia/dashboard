@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --main-clr: #36C9C6;
+  --background-clr: #fafaf0;
+  --accent-clr: #DCED31;
+}
+
+body {
+  height: 100vh;
+  display: grid;
+  grid-template: 1fr 6fr / 1fr 6fr;
+  font-family: Roboto, sans-serif;
+}
+
+.sidebar {
+  grid-row: 1 / 3;
+  background: var(--main-clr);
+  padding: 10px;
+  color: #fff;
+  box-shadow: 3px 0 3px lightgray;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 10px 10px 30px 10px;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.logo svg {
+  width: 40px;
+  height: 40px;
+}
+
+.sidebar path {
+  fill: white;
+}
+
+.sidebar span {
+  text-transform: lowercase;
+}
+
+.nav ul {
+  list-style-type: none;
+}
+
+.nav li {
+  display: flex;
+  padding: 5px;
+}
+
+.nav svg {
+  width: 20px;
+  margin: 0 15px;
+}
+
+.nav .separate {
+  margin-top: 50px;
+}
+
+.header {
+padding: 15px 30px;
+background-color: #fff;
+box-shadow: 0 5px 5px lightgray;
+z-index: 1;
+}
+
+.header svg {
+  width: 20px;
+}
+
+.header .upper {
+  display: grid;
+  grid-template-columns: 30px auto 30px 50px 100px;
+  place-items: center;
+}
+
+input {
+  margin-right: auto;
+  padding: 3px 10px;
+  width: 60%;
+  height: 1.2em;
+  border-radius: 10px;
+  border: 1px solid var(--main-clr);
+}
+
+.upper img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+.upper .username {
+  font-weight: 600;
+}
+
+.lower {
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.user_hello {
+  display: grid;
+  grid-template-columns: 60px auto;
+}
+
+.user_hello p {
+  display: grid;
+  align-content: center;
+}
+
+.user_hello p:first-of-type {
+  font-size: 0.8em;
+}
+
+.user_hello p:last-of-type {
+  font-size: 1.2em;
+  font-weight: 600;
+}
+
+.lower img {
+  width: 50px;
+  height: 50px;
+  margin: 0 10px 0 0;
+  border-radius: 50%;
+  grid-row: 1 / 3;
+  box-shadow: 0 0 5px lightgray;
+}
+
+.main_content {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  background: rgb(236, 236, 236);
+  padding: 20px;
+  z-index: -1;
+}
+
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 300px);
+  gap: 15px;
+}
+
+.card {
+  border-left: 10px solid var(--accent-clr);
+  padding: 10px;
+  background: var(--background-clr);
+  border-radius: 5px;
+}
