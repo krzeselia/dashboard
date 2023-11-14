@@ -6,9 +6,10 @@
 }
 
 :root {
-  --main-clr: #36C9C6;
+  --main-clr: #2eb1af;
   --background-clr: #fafaf0;
   --accent-clr: #DCED31;
+  --test: #a1a1a1;
 }
 
 body {
@@ -62,7 +63,7 @@ body {
   margin: 0 15px;
 }
 
-.nav .separate {
+.nav li:nth-last-of-type(3) {
   margin-top: 50px;
 }
 
@@ -73,8 +74,9 @@ box-shadow: 0 5px 5px lightgray;
 z-index: 1;
 }
 
-.header svg {
+.header img {
   width: 20px;
+  height: 20px;
 }
 
 .header .upper {
@@ -92,7 +94,7 @@ input {
   border: 1px solid var(--main-clr);
 }
 
-.upper img {
+#avatar {
   width: 30px;
   height: 30px;
   border-radius: 50%;
@@ -106,6 +108,17 @@ input {
   margin-top: 30px;
   display: flex;
   justify-content: space-between;
+}
+
+.header button {
+  background-color: var(--main-clr);
+  border: none;
+  width: 100px;
+  height: 40px;
+  margin-left: 15px;
+  font-size: 1.3rem;
+  color: var(--background-clr);
+  border-radius: 20px;
 }
 
 .user_hello {
@@ -140,19 +153,115 @@ input {
   display: grid;
   grid-template-columns: 3fr 1fr;
   background: rgb(236, 236, 236);
-  padding: 20px;
+  padding: 40px 20px;
   z-index: -1;
 }
 
 .projects {
+  max-width: 60vw;
   display: grid;
-  grid-template-columns: repeat(auto-fit, 300px);
-  gap: 15px;
+  grid-template-columns: repeat(auto-fit, clamp(200px, 30%, 350px));
+  grid-template-rows: 30px min-content;
+  gap: 25px;
+  grid-row: 1 / 3;
+}
+
+.main_content h2 {
+  grid-column: 1 / -1;
 }
 
 .card {
-  border-left: 10px solid var(--accent-clr);
+  border-left: 15px solid var(--test);
   padding: 10px;
-  background: var(--background-clr);
+  background: #fff;
   border-radius: 5px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 3px 3px 3px lightgray;
+}
+
+.card h3 {
+  color: #353535;
+  margin: 5px;
+}
+
+.card p {
+  margin: 5px;
+  color: #505050;
+}
+
+.card_icons {
+  margin: auto 20px 20px;
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+.card_icons div:nth-of-type(1) {
+  content: url(./images/star-plus-outline.svg);
+  width: 25px;
+}
+
+.card_icons div:nth-of-type(2) {
+content: url(./images/eye-plus-outline.svg);
+width: 25px;
+}
+
+.card_icons div:nth-of-type(3) {
+content: url(./images/share-variant-outline.svg);
+width: 25px;
+}
+
+.announcements, .trending {
+  max-width: 15vw;
+  display: grid;
+  grid-template-rows: 30px min-content;
+  gap: 25px;
+}
+
+.announcements h2 {
+  min-height: 30px;
+}
+
+.announcements .wrap, .trending .wrap {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.announcements div {
+  padding: 10px 0;
+}
+
+.announcements h3 {
+  font-size: 1rem;
+}
+
+.announcements p {
+  font-size: 0.9rem;
+  color: #353535;
+}
+
+.trending {
+  margin-top: 20px;
+}
+
+.trending .wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.trending .at {
+  display: grid;
+  grid-template-columns: 40px auto;
+  align-items: center;
+  gap: 15px;
+}
+
+.trending img {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
 }
